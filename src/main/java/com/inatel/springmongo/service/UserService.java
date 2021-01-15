@@ -9,4 +9,6 @@ public interface UserService {
     public List<User> getAll();
 
     public User create(User user);
+
+    public User getUser(String id);
 }

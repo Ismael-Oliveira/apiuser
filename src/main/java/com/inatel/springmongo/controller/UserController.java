@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/users")
+@CrossOrigin
 public class UserController {
 
     @Autowired
@@ -17,6 +18,11 @@ public class UserController {
     @GetMapping
     public List<User> getAll(){
         return this.userService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable String id) {
+        return this.userService.getUser(id);
     }
 
     @PostMapping
